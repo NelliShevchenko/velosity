@@ -18,7 +18,9 @@ p {
     color: #6A859C;
     line-height: 1.8;/*высота строки*/
 }
-
+.hide {
+    display: none !important;
+}
 .title-wrapper {
     margin-bottom: 60px;
 }
@@ -204,7 +206,7 @@ p {
 }
 .about .card {
     padding: 35px 15px 20px;/*внутриние отступы*/
-    width: 300px;
+    max-width: 300px;
     border: 1px solid #DCEBF7;
     border-radius: 5px;
 }
@@ -281,6 +283,19 @@ p {
     margin-left: 15px;
 }
 
+.tabs__item {
+    animation: fade 1s;
+}
+@keyframes fade {
+    from {
+    opacity: 0.3;
+    }
+    to {
+    opacity: 1;
+    }
+}
+
+
 
 .tabs__item img {
     margin-bottom: 50px;
@@ -320,11 +335,13 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px 40px;
 }
 
 .footer__desc-container > * {
     width: 30%;
-    
+    min-width: 220px;
 }
 
 .footer__desc a {
@@ -377,3 +394,110 @@ p {
 .footer__copy p {
    color: #9E9E9E;
 }
+
+@media(max-width: 829px) {
+    .footer__desc-container {
+        justify-content: space-evenly;
+    }
+
+    .footer__desc h4 {
+        margin-bottom: 10px;
+    }
+
+    .footer__desc {
+        padding: 0;
+    }
+}
+
+@media(max-width:740px) {
+    .about .cards-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+@media(max-width: 660px) {
+    .tabs__nav {
+        margin-bottom: 30px;
+    }
+
+    .tabs__nav button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 30px;
+    }
+
+    .tabs__nav button+button {
+        margin-top: 10px;
+        margin-left: auto;
+    }
+}
+
+@media(max-width :600px) {
+    .services .cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .services .card {
+        width: 80%;
+    }
+
+    .title-wrapper {
+        margin-bottom: 40px;
+    }
+}
+
+
+
+@media(max-width: 400px) {
+    .header__nav li+li {
+        margin-left: 15px;
+    }
+
+    .welcome__heading {
+        font-size: 40px;
+        margin-bottom: 50px;
+    }
+
+    .welcome__links a {
+        display: block;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .welcome__links>*+* {
+        margin-top: 20px;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    .about .card h4 {
+        font-size: 16px;
+    }
+    .services .card h4 {
+             font-size: 16px;
+    }
+
+    .services .card .link {
+        font-size: 14px;
+    }
+    .tabs__item h4 {
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
